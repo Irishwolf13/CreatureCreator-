@@ -2,9 +2,9 @@ import React from 'react';
 import "../App.css";
 import { useDrag } from 'react-dnd';
 
-function Picture({ id, url }) {
+function Weapon({ id, url }) {
   const [{ isDragging }, drag] = useDrag(() => ({
-    type: "image",
+    type: "sword",
     item: {id: id},
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging()
@@ -12,7 +12,7 @@ function Picture({ id, url }) {
   }));
 
   const handleClick = () => {
-    console.log('iran')
+    console.log('iran2')
   }
 
   return(
@@ -21,9 +21,9 @@ function Picture({ id, url }) {
       ref={drag}
       src={url}
       width="150px"
-      style={{border: isDragging ? "5px solid red" : "0px"}}
+      style={{border: isDragging ? "2px solid blue" : "0px"}}
     />
   );
 }
 
-export default Picture
+export default Weapon
